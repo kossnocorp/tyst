@@ -4,5 +4,11 @@
 
 set -e
 
-# Set up fish shell
-sudo chsh -s /usr/bin/fish $(whoami)
+source ~/.config/mothership/.env || true
+
+# Make sure mise is activated
+if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+eval "$(mise activate bash --shims)"
+eval "$(mise env -s bash)"
