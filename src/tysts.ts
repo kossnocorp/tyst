@@ -1,5 +1,5 @@
 import type { $ } from "tdollar";
-import { ty } from "./index.ts";
+import { ty } from "./index.js";
 
 //#region ty
 {
